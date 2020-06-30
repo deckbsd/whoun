@@ -1,0 +1,15 @@
+{
+  "name": "whoun",
+  "version": "1.0.0",
+  "description": "Who unfollowed me on Twitter",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "deckbsd",
+  "license": "MIT",
+  "dependencies": {
+    "htmlparser2": "^4.1.0",
+    "puppeteer": "^3.3.0"
+  }
+}
