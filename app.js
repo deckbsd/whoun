@@ -32,7 +32,7 @@ async function loginTweeter(page, twitter_account, password) {
     }
 }
 
-async function get_links(page){
+async function get_pseudos(page){
     let bodyHTML = await page.content()
     let section = false
     let a = false
@@ -71,7 +71,7 @@ async function scrollToBottom(page) {
     while (await page.evaluate(() => document.scrollingElement.scrollTop + window.innerHeight < document.scrollingElement.scrollHeight)) {
         await page.evaluate((y) => { document.scrollingElement.scrollBy(0, y) }, distance)
         await page.waitFor(delay)
-        get_links(page)
+        get_pseudos(page)
     }
 }
 
