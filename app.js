@@ -11,7 +11,7 @@ async function loginTweeter(page, twitter_account, password) {
             userField: "input[name='session[username_or_email]']",
             passField: "input[name='session[password]']",
             loginSubmit: ".EdgeButton"
-        };
+        }
 
         await page.waitFor(5000)
 
@@ -66,8 +66,8 @@ async function get_links(page){
 }
 
 async function scrollToBottom(page) {
-    const distance = 100; // should be less than or equal to window.innerHeight
-    const delay = 100;
+    const distance = 100 // should be less than or equal to window.innerHeight
+    const delay = 100
     while (await page.evaluate(() => document.scrollingElement.scrollTop + window.innerHeight < document.scrollingElement.scrollHeight)) {
         await page.evaluate((y) => { document.scrollingElement.scrollBy(0, y) }, distance)
         await page.waitFor(delay)
@@ -93,8 +93,8 @@ async function run(){
     let filename = "pseudos_" + account_to_check + ".txt"
     let previous_pseudos = null
     try {
-        let file_content = fs.readFileSync(filename, "utf8");
-        previous_pseudos = file_content.split(/\n|\r/g);
+        let file_content = fs.readFileSync(filename, "utf8")
+        previous_pseudos = file_content.split(/\n|\r/g)
     }catch(err){
         console.log("No pseudos file found. A first one will be created")
     }
@@ -116,14 +116,14 @@ async function run(){
     await scrollToBottom(page)
 
     console.log("Found : " + pseudos.length + " followers")
-    file = fs.createWriteStream(filename);
+    file = fs.createWriteStream(filename)
     file.on('error', function(err) { console.log("Cannot open the file") })
     pseudos.forEach(function(v) { file.write(v + '\n') })
     file.end()
 
     console.log("Unfollower(s) : ")
     if(previous_pseudos !== null){
-        let result = previous_pseudos.filter(e => !pseudos.find(a => e === a));
+        let result = previous_pseudos.filter(e => !pseudos.find(a => e === a))
         console.log(result)
     }
 
