@@ -86,7 +86,7 @@ async function run(){
     let password = process.argv[3]
     let account_to_check = process.argv[4]
 
-    if(process.argv.length == 6 && process.argv[5] == 'v'){
+    if(process.argv.length === 6 && process.argv[5] === 'v'){
         headless = false
     }
     
