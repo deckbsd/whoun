@@ -1,6 +1,6 @@
 # Whoun
 
-This little node js app has been made to know who unfollewed a twitter account WITHOUT using the twitter API.
+This little node js app has been made to know who unfollowed a twitter account WITHOUT using the twitter API.
 
 ## Installation
 
