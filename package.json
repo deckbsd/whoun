@@ -10,6 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "htmlparser2": "^4.1.0",
-    "puppeteer": "^3.3.0"
+    "puppeteer": "^21.3.7"
   }
 }
